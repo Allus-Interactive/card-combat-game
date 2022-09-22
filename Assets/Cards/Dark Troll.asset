@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff3227ff4565094dbc420a0b94a8bcc, type: 3}
+  m_Name: Dark Troll
+  m_EditorClassIdentifier: 
+  cardName: Dark Troll
+  actionDescription: Summon creature to attack
+  cardDescription: Dark Trolls are twisted creatures who dwell underground. They
+    seek the descruction of all who live on the surface world
+  currentHealth: 3
+  attackPower: 2
+  manaCost: 4
+  cardSprite: {fileID: 21300000, guid: 5331cc8d1c56ea6429cc8c39616550f6, type: 3}
+  backgroundSprite: {fileID: 21300000, guid: 947eb1811c248cb4f8704b3548422538, type: 3}
