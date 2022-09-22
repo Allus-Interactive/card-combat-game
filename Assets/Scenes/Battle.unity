@@ -3421,6 +3421,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 916210146}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!4 &587763959
 Transform:
   m_ObjectHideFlags: 0
@@ -3565,6 +3567,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 160253749}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!4 &648333159
 Transform:
   m_ObjectHideFlags: 0
@@ -4491,6 +4495,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 1075774290}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!4 &736645152
 Transform:
   m_ObjectHideFlags: 0
@@ -6200,12 +6206,12 @@ MonoBehaviour:
   - {fileID: 1325608469}
   - {fileID: 648333158}
   - {fileID: 1309349217}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1248927850}
+  - {fileID: 587763958}
+  - {fileID: 1387195112}
+  - {fileID: 736645151}
+  - {fileID: 1292921418}
+  - {fileID: 1522803069}
   minPosition: {fileID: 1816684398}
   maxPosition: {fileID: 212643291}
   cardPositions: []
@@ -7488,6 +7494,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 1024581460}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!4 &1248927851
 Transform:
   m_ObjectHideFlags: 0
@@ -7775,6 +7783,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 1051965316}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!4 &1292921419
 Transform:
   m_ObjectHideFlags: 0
@@ -7835,6 +7845,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 1606201952}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!4 &1309349218
 Transform:
   m_ObjectHideFlags: 0
@@ -7924,6 +7936,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 98007974}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!65 &1325608470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8145,6 +8159,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 823898063}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!4 &1387195113
 Transform:
   m_ObjectHideFlags: 0
@@ -9135,6 +9151,8 @@ MonoBehaviour:
   backgroundArt: {fileID: 1543667625}
   moveSpeed: 5
   rotateSpeed: 540
+  inHand: 0
+  handPosition: 0
 --- !u!4 &1522803070
 Transform:
   m_ObjectHideFlags: 0
