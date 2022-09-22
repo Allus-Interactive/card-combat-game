@@ -1507,12 +1507,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda9455d6ad07994085549f9f5dce4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardAsset: {fileID: 11400000, guid: cdbaabf653e72f6428e3a8e7a2942aa3, type: 2}
   currentHealth: 5
   attackPower: 2
   manaCost: 3
   healthText: {fileID: 96607011}
   attackText: {fileID: 1257719686}
   manaText: {fileID: 1732115925}
+  nameText: {fileID: 923183508}
+  actionText: {fileID: 1608546954}
+  descriptionText: {fileID: 1556928226}
+  characterArt: {fileID: 1705824363}
+  backgroundArt: {fileID: 98007974}
 --- !u!1001 &1471750931
 PrefabInstance:
   m_ObjectHideFlags: 0
