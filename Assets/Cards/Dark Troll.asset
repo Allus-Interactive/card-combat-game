@@ -16,8 +16,8 @@ MonoBehaviour:
   actionDescription: Summon creature to attack
   cardDescription: Dark Trolls are twisted creatures who dwell underground. They
     seek the descruction of all who live on the surface world
-  currentHealth: 3
-  attackPower: 2
-  manaCost: 4
+  currentHealth: 2
+  attackPower: 3
+  manaCost: 3
   cardSprite: {fileID: 21300000, guid: 5331cc8d1c56ea6429cc8c39616550f6, type: 3}
   backgroundSprite: {fileID: 21300000, guid: 947eb1811c248cb4f8704b3548422538, type: 3}
