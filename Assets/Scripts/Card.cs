@@ -27,9 +27,15 @@ public class Card : MonoBehaviour
     public float moveSpeed = 5.0f;
     public float rotateSpeed = 540.0f;
 
+    public bool inHand;
+    public int handPosition;
+
+    private HandController handController;
+
     void Start()
     {
         SetUpCard();
+        handController = FindFirstObjectByType<HandController>();
     }
 
     void Update()
@@ -60,5 +66,21 @@ public class Card : MonoBehaviour
     {
         targetPoint = pointToMoveto;
         targetRotation = rotationToMatch;
+    }
+
+    private void OnMouseOver()
+    {
+        if (inHand)
+        {
+            MoveToPoint(handController.cardPositions[handPosition] + new Vector3(0f, 1f, 0.5f), Quaternion.identity);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (inHand)
+        {
+            MoveToPoint(handController.cardPositions[handPosition], handController.minPosition.rotation);
+        }
     }
 }
