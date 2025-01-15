@@ -23,7 +23,7 @@ public class Card : MonoBehaviour
 
     void Start()
     {
-        setUpCard();
+        SetUpCard();
     }
 
     void Update()
@@ -31,7 +31,7 @@ public class Card : MonoBehaviour
         
     }
 
-    public void setUpCard()
+    public void SetUpCard()
     {
         currentHealth = cardSO.currentHealth;
         attackPower = cardSO.attackPower;
