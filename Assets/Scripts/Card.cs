@@ -32,16 +32,36 @@ public class Card : MonoBehaviour
 
     private HandController handController;
 
+    private bool isSelected;
+    private Collider col;
+
+    public LayerMask whatIsDesktop;
+
     void Start()
     {
         SetUpCard();
         handController = FindFirstObjectByType<HandController>();
+        col = GetComponent<Collider>();
     }
 
     void Update()
     {
         transform.position = Vector3.Lerp(transform.position, targetPoint, moveSpeed * Time.deltaTime);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+
+        if (isSelected)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100.0f, whatIsDesktop))
+            {
+                // new Vector3 should have a Y value of 2f, but has been upped to 5f cos of a weird issue
+                // 2f did work, something to investigate later perhaps?
+                // MoveToPoint(hit.point + new Vector3(0f, 2f, 0f), Quaternion.identity);
+                MoveToPoint(hit.point + new Vector3(0f, 5f, 0f), Quaternion.identity);
+            }
+        }
     }
 
     public void SetUpCard()
@@ -81,6 +101,15 @@ public class Card : MonoBehaviour
         if (inHand)
         {
             MoveToPoint(handController.cardPositions[handPosition], handController.minPosition.rotation);
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (inHand)
+        {
+            isSelected = true;
+            col.enabled = false;
         }
     }
 }
