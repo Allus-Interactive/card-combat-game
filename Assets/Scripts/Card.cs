@@ -21,6 +21,12 @@ public class Card : MonoBehaviour
     private int attackPower;
     private int manaCost;
 
+    private Vector3 targetPoint;
+    private Quaternion targetRotation;
+
+    public float moveSpeed = 5.0f;
+    public float rotateSpeed = 540.0f;
+
     void Start()
     {
         SetUpCard();
@@ -28,7 +34,8 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        
+        transform.position = Vector3.Lerp(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
     }
 
     public void SetUpCard()
@@ -47,5 +54,11 @@ public class Card : MonoBehaviour
 
         characterArt.sprite = cardSO.characterSprite;
         backgroundArt.sprite = cardSO.backgroundSprite;
+    }
+
+    public void MoveToPoint(Vector3 pointToMoveto, Quaternion rotationToMatch)
+    {
+        targetPoint = pointToMoveto;
+        targetRotation = rotationToMatch;
     }
 }
