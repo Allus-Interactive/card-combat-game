@@ -16,7 +16,7 @@ MonoBehaviour:
   actionDescription: This is the second card
   cardLore: The second testing card
   currentHealth: 6
-  attackPower: 2
-  manaCost: 4
+  attackPower: 3
+  manaCost: 5
   characterSprite: {fileID: 21300000, guid: a9b380c719778864cbc3d8c9ac26760f, type: 3}
   backgroundSprite: {fileID: 21300000, guid: e3d89e19a761a504ba8b8e785d1a420e, type: 3}
