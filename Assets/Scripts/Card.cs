@@ -56,10 +56,15 @@ public class Card : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100.0f, whatIsDesktop))
             {
-                // new Vector3 should have a Y value of 2f, but has been upped to 5f cos of a weird issue
+                // new Vector3 should have a Y value of 2f, but has been increased cos of a weird issue
                 // 2f did work, something to investigate later perhaps?
                 // MoveToPoint(hit.point + new Vector3(0f, 2f, 0f), Quaternion.identity);
-                MoveToPoint(hit.point + new Vector3(0f, 5f, 0f), Quaternion.identity);
+                MoveToPoint(hit.point + new Vector3(0f, 4f, 0f), Quaternion.identity);
+            }
+
+            if (Input.GetMouseButtonDown(1)) 
+            {
+                ReturnToHand();
             }
         }
     }
@@ -86,6 +91,14 @@ public class Card : MonoBehaviour
     {
         targetPoint = pointToMoveto;
         targetRotation = rotationToMatch;
+    }
+
+    public void ReturnToHand()
+    {
+        isSelected = false;
+        col.enabled = true;
+
+        MoveToPoint(handController.cardPositions[handPosition], handController.minPosition.rotation);
     }
 
     private void OnMouseOver()
