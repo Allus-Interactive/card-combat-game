@@ -12,20 +12,36 @@ public class UIController : MonoBehaviour
 
     public TMP_Text playerManaText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject manaWarning;
+    public float manaWarningTime;
+    private float manaWarningCounter;
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (manaWarningCounter > 0)
+        {
+            manaWarningCounter -= Time.deltaTime;
+
+            if (manaWarningCounter <= 0)
+            {
+                manaWarning.SetActive(false);
+            }
+        }
     }
 
     public void SetPlayerManaText(int manaAmount)
     {
         playerManaText.text = "Mana: " + manaAmount;
+    }
+
+    public void ShowManaWarning()
+    {
+        manaWarning.SetActive(true);
+        manaWarningCounter = manaWarningTime;
     }
 }
