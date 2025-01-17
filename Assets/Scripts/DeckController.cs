@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class DeckController : MonoBehaviour
     public Card cardToSpawn;
 
     public int drawCardCost = 2;
+
+    public float waitBetweenDrawingCards = 0.4f;
 
     void Start()
     {
@@ -74,6 +77,20 @@ public class DeckController : MonoBehaviour
             UIController.instance.ShowManaWarning();
             // TODO: set button to disabled rather than inactive?
             UIController.instance.drawCardButton.SetActive(false);
+        }
+    }
+
+    public void DrawMultipleCards(int amountToDraw)
+    {
+        StartCoroutine(DrawMultipleCoroutine(amountToDraw));
+    }
+
+    IEnumerator DrawMultipleCoroutine(int amountToDraw)
+    {
+        for (int i = 0; i < amountToDraw; i++)
+        {
+            DrawCardToHand();
+            yield return new WaitForSeconds(waitBetweenDrawingCards);
         }
     }
 }
