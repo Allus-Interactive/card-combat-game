@@ -78,7 +78,7 @@ public class DeckController : MonoBehaviour
             UIController.instance.ShowManaWarning();
             // Set button to disabled rather than inactive
             // UIController.instance.drawCardButton.SetActive(false);
-            UIController.instance.drawCardButton.GetComponent<Button>().interactable = true;
+            UIController.instance.drawCardButton.GetComponent<Button>().interactable = false;
         }
     }
 

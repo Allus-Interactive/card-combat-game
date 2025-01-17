@@ -13,6 +13,8 @@ public class BattleController : MonoBehaviour
     public int startingMana = 4;
     public int maxMana = 12;
     public int playerMana;
+    private int currentPlayerMaxMana;
+
     public int startingCardsAmount = 5;
 
     public enum TurnOrder { playerActive, playerCardAttacks, enemyActive, enemyCardAttacks }
@@ -20,6 +22,7 @@ public class BattleController : MonoBehaviour
 
     void Start()
     {
+        currentPlayerMaxMana = startingMana;
         FillPlayerMana();
         DeckController.instance.DrawMultipleCards(startingCardsAmount);
     }
@@ -46,7 +49,7 @@ public class BattleController : MonoBehaviour
 
     public void FillPlayerMana()
     {
-        playerMana = startingMana;
+        playerMana = currentPlayerMaxMana;
         UIController.instance.SetPlayerManaText(playerMana);
     }
 
@@ -66,6 +69,11 @@ public class BattleController : MonoBehaviour
                 // UIController.instance.drawCardButton.SetActive(true);
                 UIController.instance.endTurnButton.GetComponent<Button>().interactable = true;
                 UIController.instance.drawCardButton.GetComponent<Button>().interactable = true;
+
+                if (currentPlayerMaxMana < maxMana)
+                {
+                    currentPlayerMaxMana++;
+                }
 
                 FillPlayerMana();
 
