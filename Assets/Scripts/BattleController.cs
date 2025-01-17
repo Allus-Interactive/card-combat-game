@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleController : MonoBehaviour
 {
@@ -56,7 +57,10 @@ public class BattleController : MonoBehaviour
         switch(currentPhase)
         {
             case TurnOrder.playerActive:
-
+                // UIController.instance.endTurnButton.SetActive(true);
+                // UIController.instance.drawCardButton.SetActive(true);
+                UIController.instance.endTurnButton.GetComponent<Button>().interactable = true;
+                UIController.instance.drawCardButton.GetComponent<Button>().interactable = true;
                 break;
             case TurnOrder.playerCardAttacks:
                 Debug.Log("Skipping Player Attack");
@@ -71,5 +75,14 @@ public class BattleController : MonoBehaviour
                 AdvanceTurn();
                 break;
         }
+    }
+
+    public void EndPlayerTurn()
+    {
+        // UIController.instance.endTurnButton.SetActive(false);
+        // UIController.instance.drawCardButton.SetActive(false);
+        UIController.instance.endTurnButton.GetComponent<Button>().interactable = false;
+        UIController.instance.drawCardButton.GetComponent<Button>().interactable = false;
+        AdvanceTurn();
     }
 }

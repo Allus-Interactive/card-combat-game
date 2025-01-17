@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeckController : MonoBehaviour
 {
@@ -75,8 +76,9 @@ public class DeckController : MonoBehaviour
         } else
         {
             UIController.instance.ShowManaWarning();
-            // TODO: set button to disabled rather than inactive?
-            UIController.instance.drawCardButton.SetActive(false);
+            // Set button to disabled rather than inactive
+            // UIController.instance.drawCardButton.SetActive(false);
+            UIController.instance.drawCardButton.GetComponent<Button>().interactable = true;
         }
     }
 
