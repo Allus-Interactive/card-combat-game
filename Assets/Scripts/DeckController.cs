@@ -16,6 +16,8 @@ public class DeckController : MonoBehaviour
 
     public Card cardToSpawn;
 
+    public int drawCardCost = 2;
+
     void Start()
     {
         SetupDeck();
@@ -23,10 +25,10 @@ public class DeckController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        /* if (Input.GetKeyDown(KeyCode.T))
         {
             DrawCardToHand();
-        }
+        } */
     }
 
     public void SetupDeck()
@@ -59,5 +61,19 @@ public class DeckController : MonoBehaviour
 
         activeCards.RemoveAt(0);
         HandController.instance.AddCardToHand(newCard);
+    }
+
+    public void DrawCardForMana()
+    {
+        if (BattleController.instance.playerMana >= drawCardCost)
+        {
+            DrawCardToHand();
+            BattleController.instance.SpendPlayerMana(drawCardCost);
+        } else
+        {
+            UIController.instance.ShowManaWarning();
+            // TODO: set button to disabled rather than inactive?
+            UIController.instance.drawCardButton.SetActive(false);
+        }
     }
 }

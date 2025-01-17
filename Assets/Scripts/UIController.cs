@@ -16,6 +16,8 @@ public class UIController : MonoBehaviour
     public float manaWarningTime;
     private float manaWarningCounter;
 
+    public GameObject drawCardButton;
+
     void Start()
     {
 
@@ -43,5 +45,10 @@ public class UIController : MonoBehaviour
     {
         manaWarning.SetActive(true);
         manaWarningCounter = manaWarningTime;
+    }
+
+    public void DrawCard()
+    {
+        DeckController.instance.DrawCardForMana();
     }
 }
