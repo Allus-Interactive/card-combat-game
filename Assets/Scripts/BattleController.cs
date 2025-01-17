@@ -16,6 +16,7 @@ public class BattleController : MonoBehaviour
     private int currentPlayerMaxMana;
 
     public int startingCardsAmount = 5;
+    public int cardsToDrawPerTurn = 1;
 
     public enum TurnOrder { playerActive, playerCardAttacks, enemyActive, enemyCardAttacks }
     public TurnOrder currentPhase;
@@ -76,6 +77,16 @@ public class BattleController : MonoBehaviour
                 }
 
                 FillPlayerMana();
+
+                if (cardsToDrawPerTurn > 1)
+                {
+                    // Draw multiple cards at the beginning of the turn
+                    DeckController.instance.DrawMultipleCards(cardsToDrawPerTurn);
+                } else
+                {
+                    // Draw one card per turn
+                    DeckController.instance.DrawCardToHand();
+                }
 
                 break;
             case TurnOrder.playerCardAttacks:
