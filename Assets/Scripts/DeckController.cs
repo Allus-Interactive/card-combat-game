@@ -14,6 +14,8 @@ public class DeckController : MonoBehaviour
 
     private List<CardScriptableObject> activeCards = new List<CardScriptableObject>();
 
+    public Card cardToSpawn;
+
     void Start()
     {
         SetupDeck();
@@ -21,7 +23,10 @@ public class DeckController : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            DrawCardToHand();
+        }
     }
 
     public void SetupDeck()
@@ -37,5 +42,21 @@ public class DeckController : MonoBehaviour
             activeCards.Add(tempDeck[selected]);
             tempDeck.RemoveAt(selected);
         }
+    }
+
+    public void DrawCardToHand()
+    {
+        if (activeCards.Count == 0)
+        {
+            // TODO: do we want to refill the deck? Maybe player has to finish the game with no deck
+            // or does an empty deck mean an immediate loss?
+            SetupDeck();
+        }
+
+        Card newCard = Instantiate(cardToSpawn, transform.position, transform.rotation);
+        newCard.cardSO = activeCards[0];
+        newCard.SetUpCard();
+
+        activeCards.RemoveAt(0);
     }
 }
