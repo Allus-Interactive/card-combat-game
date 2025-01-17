@@ -14,6 +14,9 @@ public class BattleController : MonoBehaviour
     public int playerMana;
     public int startingCardsAmount = 5;
 
+    public enum TurnOrder { playerActive, playerCardAttacks, enemyActive, enemyCardAttacks }
+    public TurnOrder currentPhase;
+
     void Start()
     {
         playerMana = startingMana;
@@ -23,7 +26,10 @@ public class BattleController : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            AdvanceTurn();
+        }
     }
 
     public void SpendPlayerMana(int amountToSpend)
@@ -36,5 +42,34 @@ public class BattleController : MonoBehaviour
         }
 
         UIController.instance.SetPlayerManaText(playerMana);
+    }
+
+    public void AdvanceTurn()
+    {
+        currentPhase++;
+
+        if ((int)currentPhase >= System.Enum.GetValues(typeof(TurnOrder)).Length)
+        {
+            currentPhase = 0;
+        }
+
+        switch(currentPhase)
+        {
+            case TurnOrder.playerActive:
+
+                break;
+            case TurnOrder.playerCardAttacks:
+                Debug.Log("Skipping Player Attack");
+                AdvanceTurn();
+                break;
+            case TurnOrder.enemyActive:
+                Debug.Log("Skipping Enemy Actions");
+                AdvanceTurn();
+                break;
+            case TurnOrder.enemyCardAttacks:
+                Debug.Log("Skipping Enemy Attack");
+                AdvanceTurn();
+                break;
+        }
     }
 }
