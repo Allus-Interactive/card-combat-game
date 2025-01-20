@@ -44,6 +44,8 @@ public class Card : MonoBehaviour
 
     public CardPlacePoint assignedPlace;
 
+    public Animator animator;
+
     void Start()
     {
         if (targetPoint == Vector3.zero)
@@ -160,8 +162,12 @@ public class Card : MonoBehaviour
 
             MoveToPoint(BattleController.instance.discardPoint.position, BattleController.instance.discardPoint.rotation);
 
+            animator.SetTrigger("Jump");
+
             Destroy(gameObject, 5f);
         }
+
+        animator.SetTrigger("Hurt");
 
         UpdateCardDisplay();
     }
