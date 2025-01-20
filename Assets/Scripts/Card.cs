@@ -19,9 +19,9 @@ public class Card : MonoBehaviour
     public Image characterArt;
     public Image backgroundArt;
 
-    private int currentHealth;
-    private int attackPower;
-    private int manaCost;
+    public int currentHealth;
+    public int attackPower;
+    public int manaCost;
 
     private Vector3 targetPoint;
     private Quaternion targetRotation;
@@ -125,9 +125,7 @@ public class Card : MonoBehaviour
         attackPower = cardSO.attackPower;
         manaCost = cardSO.manaCost;
 
-        healthText.text = currentHealth.ToString();
-        attackText.text = attackPower.ToString();
-        costText.text = manaCost.ToString();
+        UpdateCardDisplay();
 
         cardNameText.text = cardSO.cardName;
         actionDescriptionText.text = cardSO.actionDescription;
@@ -149,6 +147,28 @@ public class Card : MonoBehaviour
         col.enabled = true;
 
         MoveToPoint(handController.cardPositions[handPosition], handController.minPosition.rotation);
+    }
+
+    public void DamageCard(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+
+            assignedPlace.activeCard = null;
+
+            Destroy(gameObject);
+        }
+
+        UpdateCardDisplay();
+    }
+
+    public void UpdateCardDisplay()
+    {
+        healthText.text = currentHealth.ToString();
+        attackText.text = attackPower.ToString();
+        costText.text = manaCost.ToString();
     }
 
     private void OnMouseOver()
