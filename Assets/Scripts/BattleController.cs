@@ -135,6 +135,10 @@ public class BattleController : MonoBehaviour
         }
 
         UIController.instance.SetPlayerHealthText(playerHealth);
+
+        UIDamageIndicator damageClone = Instantiate(UIController.instance.playerDamageIndicator, UIController.instance.playerDamageIndicator.transform.parent);
+        damageClone.damageText.text = damageAmount.ToString();
+        damageClone.gameObject.SetActive(true);
     }
 
     public void DamageEnemy(int damageAmount)
@@ -152,5 +156,9 @@ public class BattleController : MonoBehaviour
         }
 
         UIController.instance.SetEnemyHealthText(enemyHealth);
+
+        UIDamageIndicator damageClone = Instantiate(UIController.instance.enemyDamageIndicator, UIController.instance.enemyDamageIndicator.transform.parent);
+        damageClone.damageText.text = damageAmount.ToString();
+        damageClone.gameObject.SetActive(true);
     }
 }

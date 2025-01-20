@@ -21,6 +21,9 @@ public class UIController : MonoBehaviour
     public GameObject drawCardButton;
     public GameObject endTurnButton;
 
+    public UIDamageIndicator playerDamageIndicator;
+    public UIDamageIndicator enemyDamageIndicator;
+
     void Start()
     {
 
