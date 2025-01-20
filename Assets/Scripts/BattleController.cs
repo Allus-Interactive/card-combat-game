@@ -30,7 +30,11 @@ public class BattleController : MonoBehaviour
     {
         currentPlayerMaxMana = startingMana;
         FillPlayerMana();
+
         DeckController.instance.DrawMultipleCards(startingCardsAmount);
+
+        UIController.instance.SetPlayerHealthText(playerHealth);
+        UIController.instance.SetEnemyHealthText(enemyHealth);
     }
 
     void Update()
@@ -129,6 +133,8 @@ public class BattleController : MonoBehaviour
                 // End the game
             }
         }
+
+        UIController.instance.SetPlayerHealthText(playerHealth);
     }
 
     public void DamageEnemy(int damageAmount)
@@ -144,5 +150,7 @@ public class BattleController : MonoBehaviour
                 // End the game
             }
         }
+
+        UIController.instance.SetEnemyHealthText(enemyHealth);
     }
 }
