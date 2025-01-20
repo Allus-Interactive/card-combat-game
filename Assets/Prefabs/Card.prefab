@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSO: {fileID: 11400000, guid: f7209c1ef6760d14fa0f02c05421f81c, type: 2}
+  isPlayer: 1
   healthText: {fileID: 3746054338455957719}
   attackText: {fileID: 970581494177452767}
   costText: {fileID: 4517380500487372023}

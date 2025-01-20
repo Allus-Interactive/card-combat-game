@@ -6,6 +6,8 @@ public class Card : MonoBehaviour
 {
     public CardScriptableObject cardSO;
 
+    public bool isPlayer;
+
     public TMP_Text healthText;
     public TMP_Text attackText;
     public TMP_Text costText;
@@ -44,7 +46,14 @@ public class Card : MonoBehaviour
 
     void Start()
     {
+        if (targetPoint == Vector3.zero)
+        {
+            targetPoint = transform.position;
+            targetRotation = transform.rotation;
+        }
+
         SetUpCard();
+
         handController = FindFirstObjectByType<HandController>();
         col = GetComponent<Collider>();
     }
@@ -144,7 +153,7 @@ public class Card : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (inHand)
+        if (inHand && isPlayer)
         {
             MoveToPoint(handController.cardPositions[handPosition] + new Vector3(0f, 1f, 0.5f), Quaternion.identity);
         }
@@ -152,7 +161,7 @@ public class Card : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (inHand)
+        if (inHand && isPlayer)
         {
             MoveToPoint(handController.cardPositions[handPosition], handController.minPosition.rotation);
         }
@@ -160,7 +169,7 @@ public class Card : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (inHand && BattleController.instance.currentPhase == BattleController.TurnOrder.playerActive)
+        if (inHand && BattleController.instance.currentPhase == BattleController.TurnOrder.playerActive && isPlayer)
         {
             isSelected = true;
             col.enabled = false;
