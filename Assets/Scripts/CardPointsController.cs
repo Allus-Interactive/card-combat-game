@@ -45,6 +45,7 @@ public class CardPointsController : MonoBehaviour
                 } else
                 {
                     // Attack the enemy directly
+                    BattleController.instance.DamageEnemy(playerCardPoints[i].activeCard.attackPower);
                 }
 
                 playerCardPoints[i].activeCard.animator.SetTrigger("Attack");
