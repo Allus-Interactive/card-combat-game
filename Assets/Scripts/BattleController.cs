@@ -21,6 +21,8 @@ public class BattleController : MonoBehaviour
     public enum TurnOrder { playerActive, playerCardAttacks, enemyActive, enemyCardAttacks }
     public TurnOrder currentPhase;
 
+    public Transform discardPoint;
+
     void Start()
     {
         currentPlayerMaxMana = startingMana;
