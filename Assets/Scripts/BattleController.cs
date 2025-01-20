@@ -23,6 +23,8 @@ public class BattleController : MonoBehaviour
 
     public Transform discardPoint;
 
+    public int playerHealth;
+
     void Start()
     {
         currentPlayerMaxMana = startingMana;
@@ -111,5 +113,20 @@ public class BattleController : MonoBehaviour
         UIController.instance.endTurnButton.GetComponent<Button>().interactable = false;
         UIController.instance.drawCardButton.GetComponent<Button>().interactable = false;
         AdvanceTurn();
+    }
+
+    public void DamagePlayer(int damageAmount)
+    {
+        if (playerHealth > 0)
+        {
+            playerHealth -= damageAmount;
+
+            if (playerHealth <= 0)
+            {
+                playerHealth = 0;
+
+                // End the game
+            }
+        }
     }
 }
