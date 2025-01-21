@@ -15,6 +15,9 @@ public class EnemyController : MonoBehaviour
 
     private List<CardScriptableObject> activeCards = new List<CardScriptableObject>();
 
+    public Card cardToSpawn;
+    public Transform cardSpawnPoint;
+
     void Start()
     {
         SetupDeck();
@@ -52,6 +55,36 @@ public class EnemyController : MonoBehaviour
             // TODO: do we want to refill the deck? Maybe enemy has to finish the game with no deck
             // or does an empty deck mean an immediate loss?
             SetupDeck();
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        List<CardPlacePoint> cardPoints = new List<CardPlacePoint>();
+        cardPoints.AddRange(CardPointsController.instance.enemyCardPoints);
+
+        // Place enemy card at random spot on the field
+        // TODO: upgrade this to place cards opposite existing player cards? To block direct attacks?
+
+        int randomPoint = Random.Range(0, cardPoints.Count);
+        CardPlacePoint selectedPoint = cardPoints[randomPoint];
+
+        while (selectedPoint.activeCard != null && cardPoints.Count > 0)
+        {
+            randomPoint = Random.Range(0, cardPoints.Count);
+            selectedPoint = cardPoints[randomPoint];
+            cardPoints.RemoveAt(randomPoint);
+        }
+
+        if (selectedPoint.activeCard == null)
+        {
+            Card newCard = Instantiate(cardToSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
+            newCard.cardSO = activeCards[0];
+            activeCards.RemoveAt(0);
+            newCard.SetUpCard();
+            newCard.MoveToPoint(selectedPoint.transform.position, selectedPoint.transform.rotation);
+
+            selectedPoint.activeCard = newCard;
+            newCard.assignedPlace = selectedPoint;
         }
 
         yield return new WaitForSeconds(0.5f);
