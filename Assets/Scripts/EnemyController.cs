@@ -70,6 +70,22 @@ public class EnemyController : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        if (enemyAiType != AiType.placeFromDeck)
+        {
+            for (int i = 0; i < BattleController.instance.cardsToDrawPerTurn; i++)
+            {
+                cardsInHand.Add(activeCards[0]);
+                activeCards.RemoveAt(0);
+
+                if (activeCards.Count == 0)
+                {
+                    // TODO: do we want to refill the deck or break out of the loop as there are no more cards
+                    // break;
+                    SetupDeck();
+                }
+            }
+        }
+
         List<CardPlacePoint> cardPoints = new List<CardPlacePoint>();
         cardPoints.AddRange(CardPointsController.instance.enemyCardPoints);
 
@@ -108,7 +124,23 @@ public class EnemyController : MonoBehaviour
                 break;
             case AiType.handRandomPlace:
                 selectedCard = SelectedCardToPlay();
-                PlayCard(selectedCard, selectedPoint);
+
+                while (selectedCard != null && selectedPoint.activeCard == null)
+                {
+                    PlayCard(selectedCard, selectedPoint);
+
+                    // check if the enemy can play another card
+                    selectedCard = SelectedCardToPlay();
+
+                    yield return new WaitForSeconds(CardPointsController.instance.timeBetweenAttacks);
+
+                    while (selectedPoint.activeCard != null && cardPoints.Count > 0)
+                    {
+                        randomPoint = Random.Range(0, cardPoints.Count);
+                        selectedPoint = cardPoints[randomPoint];
+                        cardPoints.RemoveAt(randomPoint);
+                    }
+                }
                 break;
             case AiType.handDefensive:
                 break;
