@@ -105,7 +105,8 @@ public class EnemyController : MonoBehaviour
         }
 
         CardScriptableObject selectedCard = null;
-        int iterations = 0;
+        List<CardPlacePoint> preferredPoints = new List<CardPlacePoint>();
+        List<CardPlacePoint> secondaryPoints = new List<CardPlacePoint>();
 
         switch (enemyAiType)
         {
@@ -143,6 +144,50 @@ public class EnemyController : MonoBehaviour
                 }
                 break;
             case AiType.handDefensive:
+                selectedCard = SelectedCardToPlay();
+
+                preferredPoints.Clear();
+                secondaryPoints.Clear();
+
+                for (int i = 0; i < cardPoints.Count; i++)
+                {
+                    if (cardPoints[i].activeCard == null)
+                    {
+                        if (CardPointsController.instance.playerCardPoints[i].activeCard != null)
+                        {
+                            preferredPoints.Add(cardPoints[i]);
+                        } else
+                        {
+                            secondaryPoints.Add(cardPoints[i]);
+                        }
+                    }
+                }
+
+                while (selectedCard != null && preferredPoints.Count + secondaryPoints.Count > 0)
+                {
+                    // Pick a card point to use
+                    if (preferredPoints.Count > 0)
+                    {
+                        int selectPoint = Random.Range(0, preferredPoints.Count);
+                        selectedPoint = preferredPoints[selectPoint];
+
+                        preferredPoints.RemoveAt(selectPoint);
+                    } else
+                    {
+                        int selectPoint = Random.Range(0, secondaryPoints.Count);
+                        selectedPoint = secondaryPoints[selectPoint];
+
+                        secondaryPoints.RemoveAt(selectPoint);
+                    }
+
+                    PlayCard(selectedCard, selectedPoint);
+
+                    // Check if the enemy should try play another card
+                    selectedCard = SelectedCardToPlay();
+
+                    yield return new WaitForSeconds(CardPointsController.instance.timeBetweenAttacks);
+                }
+
                 break;
             case AiType.handOffensive:
                 break;
