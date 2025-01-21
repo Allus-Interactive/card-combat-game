@@ -13,7 +13,9 @@ public class BattleController : MonoBehaviour
     public int startingMana = 4;
     public int maxMana = 12;
     public int playerMana;
+    public int enemyMana;
     private int currentPlayerMaxMana;
+    private int currentEnemyMaxMana;
 
     public int startingCardsAmount = 5;
     public int cardsToDrawPerTurn = 1;
