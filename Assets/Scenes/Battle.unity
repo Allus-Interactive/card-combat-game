@@ -3069,6 +3069,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd0f00b39b9143741b1a8cd11c64d1a4, type: 2}
   cardToSpawn: {fileID: 7518856452107962497, guid: 187b76226685f594390b44b4fa63540f, type: 3}
   cardSpawnPoint: {fileID: 1899421828}
+  enemyAiType: 1
+  startHandSize: 5
 --- !u!4 &1767204095
 Transform:
   m_ObjectHideFlags: 0
@@ -3117,6 +3119,7 @@ MonoBehaviour:
   startingMana: 4
   maxMana: 12
   playerMana: 0
+  enemyMana: 0
   startingCardsAmount: 5
   cardsToDrawPerTurn: 1
   currentPhase: 0
