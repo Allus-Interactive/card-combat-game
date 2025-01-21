@@ -18,6 +18,9 @@ public class EnemyController : MonoBehaviour
     public Card cardToSpawn;
     public Transform cardSpawnPoint;
 
+    public enum AiType { placeFromDeck, handRandomPlace, handDefensive, handOffensive }
+    public AiType enemyAiType;
+
     void Start()
     {
         SetupDeck();
@@ -62,9 +65,6 @@ public class EnemyController : MonoBehaviour
         List<CardPlacePoint> cardPoints = new List<CardPlacePoint>();
         cardPoints.AddRange(CardPointsController.instance.enemyCardPoints);
 
-        // Place enemy card at random spot on the field
-        // TODO: upgrade this to place cards opposite existing player cards? To block direct attacks?
-
         int randomPoint = Random.Range(0, cardPoints.Count);
         CardPlacePoint selectedPoint = cardPoints[randomPoint];
 
@@ -75,16 +75,27 @@ public class EnemyController : MonoBehaviour
             cardPoints.RemoveAt(randomPoint);
         }
 
-        if (selectedPoint.activeCard == null)
+        switch (enemyAiType)
         {
-            Card newCard = Instantiate(cardToSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
-            newCard.cardSO = activeCards[0];
-            activeCards.RemoveAt(0);
-            newCard.SetUpCard();
-            newCard.MoveToPoint(selectedPoint.transform.position, selectedPoint.transform.rotation);
+            case AiType.placeFromDeck:
+                if (selectedPoint.activeCard == null)
+                {
+                    Card newCard = Instantiate(cardToSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
+                    newCard.cardSO = activeCards[0];
+                    activeCards.RemoveAt(0);
+                    newCard.SetUpCard();
+                    newCard.MoveToPoint(selectedPoint.transform.position, selectedPoint.transform.rotation);
 
-            selectedPoint.activeCard = newCard;
-            newCard.assignedPlace = selectedPoint;
+                    selectedPoint.activeCard = newCard;
+                    newCard.assignedPlace = selectedPoint;
+                }
+                break;
+            case AiType.handRandomPlace:
+                break;
+            case AiType.handDefensive:
+                break;
+            case AiType.handOffensive:
+                break;
         }
 
         yield return new WaitForSeconds(0.5f);
