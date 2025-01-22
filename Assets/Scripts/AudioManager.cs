@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource mainMenu;
     public AudioSource gameSelection;
     public AudioSource[] bgm;
+    public AudioSource[] sfx;
 
     private int currentBGM;
     private bool playingBGM;
@@ -78,5 +79,11 @@ public class AudioManager : MonoBehaviour
 
         bgm[currentBGM].Play();
         playingBGM = true;
+    }
+
+    public void PlaySFX(int sfxToPlay)
+    {
+        sfx[sfxToPlay].Stop();
+        sfx[sfxToPlay].Play();
     }
 }
