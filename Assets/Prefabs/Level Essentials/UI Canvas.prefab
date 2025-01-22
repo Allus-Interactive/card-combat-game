@@ -693,7 +693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5225359617460871107
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2477,9 +2477,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6965263217160002439}
+      - m_Target: {fileID: 9015617420256698863}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2763,6 +2763,7 @@ MonoBehaviour:
   enemyDamageIndicator: {fileID: 7699733504892875247}
   BattleEndScreen: {fileID: 3989396064369278345}
   battleResultText: {fileID: 1812552626811798733}
+  pauseScreen: {fileID: 3329182792152056844}
 --- !u!1 &7817577011093460635
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,6 +32,8 @@ public class UIController : MonoBehaviour
     private string mainMenuScene = "Main Menu";
     private string gameSelectionScene = "Game Selection";
 
+    public GameObject pauseScreen;
+
     void Start()
     {
 
@@ -47,6 +49,11 @@ public class UIController : MonoBehaviour
             {
                 manaWarning.SetActive(false);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
         }
     }
 
@@ -89,15 +96,36 @@ public class UIController : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(mainMenuScene);
+
+        Time.timeScale = 1f;
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        Time.timeScale = 1f;
     }
 
     public void ChooseNewGame()
     {
         SceneManager.LoadScene(gameSelectionScene);
+
+        Time.timeScale = 1f;
+    }
+
+    public void PauseGame()
+    {
+        if (pauseScreen.activeSelf == false)
+        {
+            pauseScreen.SetActive(true);
+
+            Time.timeScale = 0f;
+        } else
+        {
+            pauseScreen.SetActive(false);
+
+            Time.timeScale = 1f;
+        }
     }
 }
