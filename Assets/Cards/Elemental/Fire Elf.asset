@@ -18,5 +18,5 @@ MonoBehaviour:
   currentHealth: 0
   attackPower: 0
   manaCost: 0
-  characterSprite: {fileID: 21300000, guid: e5f2be9cef96f2c499bf9b52094cdc4c, type: 3}
+  characterSprite: {fileID: 21300000, guid: 4958592542e1d364f9b8730f3d46e86f, type: 3}
   backgroundSprite: {fileID: 0}
