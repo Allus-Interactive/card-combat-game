@@ -28,6 +28,8 @@ public class BattleController : MonoBehaviour
     public int playerHealth;
     public int enemyHealth;
 
+    public bool battleEnded;
+
     void Start()
     {
         currentPlayerMaxMana = startingMana;
@@ -87,55 +89,59 @@ public class BattleController : MonoBehaviour
 
     public void AdvanceTurn()
     {
-        currentPhase++;
+        if (!battleEnded) 
+        { 
+            currentPhase++;
 
-        if ((int)currentPhase >= System.Enum.GetValues(typeof(TurnOrder)).Length)
-        {
-            currentPhase = 0;
-        }
+            if ((int)currentPhase >= System.Enum.GetValues(typeof(TurnOrder)).Length)
+            {
+                currentPhase = 0;
+            }
 
-        switch(currentPhase)
-        {
-            case TurnOrder.playerActive:
-                // UIController.instance.endTurnButton.SetActive(true);
-                // UIController.instance.drawCardButton.SetActive(true);
-                UIController.instance.endTurnButton.GetComponent<Button>().interactable = true;
-                UIController.instance.drawCardButton.GetComponent<Button>().interactable = true;
+            switch (currentPhase)
+            {
+                case TurnOrder.playerActive:
+                    // UIController.instance.endTurnButton.SetActive(true);
+                    // UIController.instance.drawCardButton.SetActive(true);
+                    UIController.instance.endTurnButton.GetComponent<Button>().interactable = true;
+                    UIController.instance.drawCardButton.GetComponent<Button>().interactable = true;
 
-                if (currentPlayerMaxMana < maxMana)
-                {
-                    currentPlayerMaxMana++;
-                }
+                    if (currentPlayerMaxMana < maxMana)
+                    {
+                        currentPlayerMaxMana++;
+                    }
 
-                FillPlayerMana();
+                    FillPlayerMana();
 
-                if (cardsToDrawPerTurn > 1)
-                {
-                    // Draw multiple cards at the beginning of the turn
-                    DeckController.instance.DrawMultipleCards(cardsToDrawPerTurn);
-                } else
-                {
-                    // Draw one card per turn
-                    DeckController.instance.DrawCardToHand();
-                }
+                    if (cardsToDrawPerTurn > 1)
+                    {
+                        // Draw multiple cards at the beginning of the turn
+                        DeckController.instance.DrawMultipleCards(cardsToDrawPerTurn);
+                    }
+                    else
+                    {
+                        // Draw one card per turn
+                        DeckController.instance.DrawCardToHand();
+                    }
 
-                break;
-            case TurnOrder.playerCardAttacks:
-                CardPointsController.instance.PlayerAttack();
-                break;
-            case TurnOrder.enemyActive:
-                if (currentEnemyMaxMana < maxMana)
-                {
-                    currentEnemyMaxMana++;
-                }
+                    break;
+                case TurnOrder.playerCardAttacks:
+                    CardPointsController.instance.PlayerAttack();
+                    break;
+                case TurnOrder.enemyActive:
+                    if (currentEnemyMaxMana < maxMana)
+                    {
+                        currentEnemyMaxMana++;
+                    }
 
-                FillEnemyMana();
+                    FillEnemyMana();
 
-                EnemyController.instance.StartAction();
-                break;
-            case TurnOrder.enemyCardAttacks:
-                CardPointsController.instance.EnemyAttack();
-                break;
+                    EnemyController.instance.StartAction();
+                    break;
+                case TurnOrder.enemyCardAttacks:
+                    CardPointsController.instance.EnemyAttack();
+                    break;
+            }
         }
     }
 
@@ -150,7 +156,7 @@ public class BattleController : MonoBehaviour
 
     public void DamagePlayer(int damageAmount)
     {
-        if (playerHealth > 0)
+        if (playerHealth > 0 || !battleEnded)
         {
             playerHealth -= damageAmount;
 
@@ -159,6 +165,7 @@ public class BattleController : MonoBehaviour
                 playerHealth = 0;
 
                 // End the game
+                EndBattle();
             }
         }
 
@@ -171,7 +178,7 @@ public class BattleController : MonoBehaviour
 
     public void DamageEnemy(int damageAmount)
     {
-        if (enemyHealth > 0)
+        if (enemyHealth > 0 || !battleEnded)
         {
             enemyHealth -= damageAmount;
 
@@ -180,6 +187,7 @@ public class BattleController : MonoBehaviour
                 enemyHealth = 0;
 
                 // End the game
+                EndBattle();
             }
         }
 
@@ -188,5 +196,10 @@ public class BattleController : MonoBehaviour
         UIDamageIndicator damageClone = Instantiate(UIController.instance.enemyDamageIndicator, UIController.instance.enemyDamageIndicator.transform.parent);
         damageClone.damageText.text = damageAmount.ToString();
         damageClone.gameObject.SetActive(true);
+    }
+
+    void EndBattle()
+    {
+        battleEnded = true;
     }
 }

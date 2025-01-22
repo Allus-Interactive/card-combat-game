@@ -75,12 +75,12 @@ public class Card : MonoBehaviour
                 MoveToPoint(hit.point + new Vector3(0f, 2f, 0f), Quaternion.identity);
             }
 
-            if (Input.GetMouseButtonDown(1)) 
+            if (Input.GetMouseButtonDown(1) && BattleController.instance.battleEnded == false) 
             {
                 ReturnToHand();
             }
 
-            if (Input.GetMouseButtonDown(0) && justPressed == false)
+            if (Input.GetMouseButtonDown(0) && justPressed == false && BattleController.instance.battleEnded == false)
             {
                 if (Physics.Raycast(ray, out hit, 100.0f, whatIsPlacement) && BattleController.instance.currentPhase == BattleController.TurnOrder.playerActive)
                 {
@@ -181,7 +181,7 @@ public class Card : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (inHand && isPlayer)
+        if (inHand && isPlayer && BattleController.instance.battleEnded == false)
         {
             MoveToPoint(handController.cardPositions[handPosition] + new Vector3(0f, 1f, 0.5f), Quaternion.identity);
         }
@@ -189,7 +189,7 @@ public class Card : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (inHand && isPlayer)
+        if (inHand && isPlayer && BattleController.instance.battleEnded == false)
         {
             MoveToPoint(handController.cardPositions[handPosition], handController.minPosition.rotation);
         }
@@ -197,7 +197,7 @@ public class Card : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (inHand && BattleController.instance.currentPhase == BattleController.TurnOrder.playerActive && isPlayer)
+        if (inHand && BattleController.instance.currentPhase == BattleController.TurnOrder.playerActive && isPlayer && BattleController.instance.battleEnded == false)
         {
             isSelected = true;
             col.enabled = false;
