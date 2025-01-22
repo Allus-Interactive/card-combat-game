@@ -9,4 +9,9 @@ public class GameSelectButton : MonoBehaviour
     {
         SceneManager.LoadScene(levelToLoad);
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

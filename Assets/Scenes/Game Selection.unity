@@ -867,14 +867,14 @@ PrefabInstance:
     - target: {fileID: 6221066837278392534, guid: e45f702405135994cbd991aa4e52e825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 734354481}
     - target: {fileID: 6221066837278392534, guid: e45f702405135994cbd991aa4e52e825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
+      value: BackToMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6221066837278392534, guid: e45f702405135994cbd991aa4e52e825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenu, Assembly-CSharp
+      value: GameSelectButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6655358890284417889, guid: e45f702405135994cbd991aa4e52e825, type: 3}
       propertyPath: m_Name
@@ -887,6 +887,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6655358890284417889, guid: e45f702405135994cbd991aa4e52e825, type: 3}
       insertIndex: -1
       addedObject: {fileID: 734354480}
+    - targetCorrespondingSourceObject: {fileID: 6655358890284417889, guid: e45f702405135994cbd991aa4e52e825, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 734354481}
   m_SourcePrefab: {fileID: 100100000, guid: e45f702405135994cbd991aa4e52e825, type: 3}
 --- !u!224 &734354478 stripped
 RectTransform:
@@ -913,6 +916,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &734354481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734354479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a76b973dd44b62428e9bd7a09a7c160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: 
 --- !u!1 &831478618
 GameObject:
   m_ObjectHideFlags: 0
