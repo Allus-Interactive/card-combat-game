@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class UIController : MonoBehaviour
 
     public GameObject BattleEndScreen;
     public TMP_Text battleResultText;
+
+    private string mainMenuScene = "Main Menu";
+    private string gameSelectionScene = "Game Selection";
 
     void Start()
     {
@@ -84,16 +88,16 @@ public class UIController : MonoBehaviour
 
     public void MainMenu()
     {
-        Debug.Log("Go to Main Menu");
+        SceneManager.LoadScene(mainMenuScene);
     }
 
     public void RestartGame()
     {
-        Debug.Log("Restart the game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChooseNewGame()
     {
-        Debug.Log("Choose a new game");
+        SceneManager.LoadScene(gameSelectionScene);
     }
 }

@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle.unity
     guid: 8c832c2555629cc46a1cc5037430ae57
+  - enabled: 1
+    path: Assets/Scenes/Battle Defensive.unity
+    guid: d9be8b01ebfd60947ab8ae46e859057e
+  - enabled: 1
+    path: Assets/Scenes/Battle Offensive.unity
+    guid: ea066fd929bd7ce4d8b8c0d9fb7dfc35
+  - enabled: 1
+    path: Assets/Scenes/Game Selection.unity
+    guid: e9b497c19f5fec842b791c112dffa5c5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
