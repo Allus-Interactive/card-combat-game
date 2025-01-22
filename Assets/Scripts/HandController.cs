@@ -73,16 +73,8 @@ public class HandController : MonoBehaviour
         SetCardPositonsInHand();
     }
 
-    public void EmptyHand()
+    public void EmptyHandAndEndGame()
     {
-        /* foreach (Card heldCard in heldCards)
-        {
-            heldCard.inHand = false;
-            // heldCard.MoveToPoint(BattleController.instance.discardPoint.position, heldCard.transform.rotation);
-            heldCard.MoveToPoint(DeckController.instance.transform.position, DeckController.instance.transform.rotation);
-        }
-
-        heldCards.Clear(); */
         StartCoroutine(EmptyHandCoroutine());
     }
 
@@ -103,5 +95,10 @@ public class HandController : MonoBehaviour
 
         // Clear the heldCards object
         heldCards.Clear();
+
+        yield return new WaitForSeconds(0.5f);
+
+        // Show end game UI
+        UIController.instance.BattleEndScreen.SetActive(true);
     }
 }

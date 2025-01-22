@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 233753424}
   - component: {fileID: 233753423}
   m_Layer: 5
-  m_Name: New Battle
+  m_Name: New Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -877,7 +877,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2131160245}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: EndPlayerTurn
+        m_MethodName: ChooseNewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1899,7 +1899,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start a New Battle
+  m_text: Start a New Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ab49864cefd67742a5132e0c7a8af14, type: 2}
   m_sharedMaterial: {fileID: 5396862022198929799, guid: 4ab49864cefd67742a5132e0c7a8af14, type: 2}
@@ -3932,7 +3932,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2131160245}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: EndPlayerTurn
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4329,7 +4329,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2131160245}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: EndPlayerTurn
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4826,7 +4826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2071367795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5154,6 +5154,7 @@ MonoBehaviour:
   endTurnButton: {fileID: 1643134984}
   playerDamageIndicator: {fileID: 4026435}
   enemyDamageIndicator: {fileID: 549859874}
+  BattleEndScreen: {fileID: 2071367794}
 --- !u!114 &2131160246
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,8 @@ public class BattleController : MonoBehaviour
     public int enemyHealth;
 
     public bool battleEnded;
+
+    public float resultsScreenDelay = 3f;
 
     void Start()
     {
@@ -202,6 +205,6 @@ public class BattleController : MonoBehaviour
     {
         battleEnded = true;
 
-        HandController.instance.EmptyHand();
+        HandController.instance.EmptyHandAndEndGame();
     }
 }

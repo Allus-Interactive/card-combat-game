@@ -25,6 +25,8 @@ public class UIController : MonoBehaviour
     public UIDamageIndicator playerDamageIndicator;
     public UIDamageIndicator enemyDamageIndicator;
 
+    public GameObject BattleEndScreen;
+
     void Start()
     {
 
@@ -77,5 +79,20 @@ public class UIController : MonoBehaviour
     public void EndPlayerTurn()
     {
         BattleController.instance.EndPlayerTurn();
+    }
+
+    public void MainMenu()
+    {
+        Debug.Log("Go to Main Menu");
+    }
+
+    public void RestartGame()
+    {
+        Debug.Log("Restart the game");
+    }
+
+    public void ChooseNewGame()
+    {
+        Debug.Log("Choose a new game");
     }
 }
