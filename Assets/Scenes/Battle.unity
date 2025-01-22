@@ -1095,6 +1095,70 @@ PrefabInstance:
       propertyPath: enemyAiType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: deckToUse.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 55305c74f7afb974f8f2e5826e72b4ab, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 55305c74f7afb974f8f2e5826e72b4ab, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 55305c74f7afb974f8f2e5826e72b4ab, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 40cde69832b40c242bac91a23e4ba013, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 40cde69832b40c242bac91a23e4ba013, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 40cde69832b40c242bac91a23e4ba013, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 29798852c4f29854aac8b5f6151c8a44, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 29798852c4f29854aac8b5f6151c8a44, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 29798852c4f29854aac8b5f6151c8a44, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d41c37d3e07e7845b20d21afe0c8968, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d41c37d3e07e7845b20d21afe0c8968, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d41c37d3e07e7845b20d21afe0c8968, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5971dcfc7f942944e9a82c6387ea18c9, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[13]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5971dcfc7f942944e9a82c6387ea18c9, type: 2}
+    - target: {fileID: 1089756487851710258, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
+      propertyPath: 'deckToUse.Array.data[14]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5971dcfc7f942944e9a82c6387ea18c9, type: 2}
     - target: {fileID: 6241402152030677994, guid: 8a2df4f0e5eb5f5418bc440d3fc7f848, type: 3}
       propertyPath: m_Name
       value: Enemy Controller
