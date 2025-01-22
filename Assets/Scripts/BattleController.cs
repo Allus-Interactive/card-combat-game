@@ -33,6 +33,9 @@ public class BattleController : MonoBehaviour
 
     public float resultsScreenDelay = 3f;
 
+    [Range(0f, 1f)]
+    public float firstTurnChance = 0.5f;
+
     void Start()
     {
         currentPlayerMaxMana = startingMana;
@@ -44,6 +47,13 @@ public class BattleController : MonoBehaviour
 
         UIController.instance.SetPlayerHealthText(playerHealth);
         UIController.instance.SetEnemyHealthText(enemyHealth);
+
+        if (Random.value > firstTurnChance)
+        {
+            // Enemy goes first
+            currentPhase = TurnOrder.playerCardAttacks;
+            AdvanceTurn();
+        }
     }
 
     void Update()
