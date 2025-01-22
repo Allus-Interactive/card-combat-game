@@ -54,6 +54,8 @@ public class BattleController : MonoBehaviour
             currentPhase = TurnOrder.playerCardAttacks;
             AdvanceTurn();
         }
+
+        AudioManager.instance.PlayBGM();
     }
 
     void Update()
