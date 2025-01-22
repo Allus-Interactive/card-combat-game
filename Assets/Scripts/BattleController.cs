@@ -58,14 +58,6 @@ public class BattleController : MonoBehaviour
         AudioManager.instance.PlayBGM();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            AdvanceTurn();
-        }
-    }
-
     public void SpendPlayerMana(int amountToSpend)
     {
         playerMana -= amountToSpend;

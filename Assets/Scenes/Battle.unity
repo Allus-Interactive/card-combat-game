@@ -171,10 +171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
-    - target: {fileID: 2084633655853117967, guid: 164a781b79867fb4080df4adec0b8f11, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -980,18 +976,6 @@ PrefabInstance:
     - target: {fileID: 4828143640045626, guid: 137b6894a879e4d46a27e8c1d8511089, type: 3}
       propertyPath: m_Name
       value: Deck
-      objectReference: {fileID: 0}
-    - target: {fileID: 818238442858525312, guid: 137b6894a879e4d46a27e8c1d8511089, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 818238442858525312, guid: 137b6894a879e4d46a27e8c1d8511089, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 100.00007
-      objectReference: {fileID: 0}
-    - target: {fileID: 818238442858525312, guid: 137b6894a879e4d46a27e8c1d8511089, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 9000.004
       objectReference: {fileID: 0}
     - target: {fileID: 818238442858525312, guid: 137b6894a879e4d46a27e8c1d8511089, type: 3}
       propertyPath: m_LocalPosition.x

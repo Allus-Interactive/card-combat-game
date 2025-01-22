@@ -15,16 +15,6 @@ public class CardPointsController : MonoBehaviour
 
     public float timeBetweenAttacks = 0.25f;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void PlayerAttack()
     {
         StartCoroutine(PlayerAttackCoroutine());

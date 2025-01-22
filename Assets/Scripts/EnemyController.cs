@@ -34,11 +34,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     public void SetupDeck()
     {
         activeCards.Clear();

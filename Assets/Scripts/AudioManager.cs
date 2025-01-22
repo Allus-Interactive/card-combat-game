@@ -24,11 +24,6 @@ public class AudioManager : MonoBehaviour
     private int currentBGM;
     private bool playingBGM;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (playingBGM)
