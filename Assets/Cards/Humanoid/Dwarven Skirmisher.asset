@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dwarven Skirmisher
   m_EditorClassIdentifier: 
   cardName: Dwarven Skirmisher
-  actionDescription: Fights an enemy being
+  actionDescription: Deals damage to an enemy card
   cardLore: A dwarven skirmisher skilled in the art of close combat fighting
   currentHealth: 3
   attackPower: 2

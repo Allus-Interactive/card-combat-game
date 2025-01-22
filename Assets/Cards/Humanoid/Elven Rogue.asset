@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Elven Rogue
   m_EditorClassIdentifier: 
   cardName: Elven Rogue
-  actionDescription: Fights an enemy being
+  actionDescription: Deals damage to an enemy card
   cardLore: A decietful Elf who relies on trickery in combat
   currentHealth: 2
   attackPower: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Elven Mage
   m_EditorClassIdentifier: 
   cardName: Elven Mage
-  actionDescription: Fights an enemy being
+  actionDescription: Deals damage to an enemy card
   cardLore: An Elven Mage who has spent decades honing their skill
   currentHealth: 1
   attackPower: 3

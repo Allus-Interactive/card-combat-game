@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Orc
   m_EditorClassIdentifier: 
   cardName: 
-  actionDescription: 
+  actionDescription: Deals damage to an enemy card
   cardLore: 
   currentHealth: 0
   attackPower: 0

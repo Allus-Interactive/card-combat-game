@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Human Mage
   m_EditorClassIdentifier: 
   cardName: Human Mage
-  actionDescription: Fights an enemy being
+  actionDescription: Deals damage to an enemy card
   cardLore: A mage who has seen more of combat than he would have liked
   currentHealth: 2
   attackPower: 4

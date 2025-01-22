@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Human Warrior
   m_EditorClassIdentifier: 
   cardName: Human Warrior
-  actionDescription: Fights an enemy being
+  actionDescription: Deals damage to an enemy card
   cardLore: A skilled Warrior who lives for adventure and combat
   currentHealth: 6
   attackPower: 4
