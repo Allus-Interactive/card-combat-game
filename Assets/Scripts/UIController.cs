@@ -26,6 +26,7 @@ public class UIController : MonoBehaviour
     public UIDamageIndicator enemyDamageIndicator;
 
     public GameObject BattleEndScreen;
+    public TMP_Text battleResultText;
 
     void Start()
     {

@@ -205,6 +205,30 @@ public class BattleController : MonoBehaviour
     {
         battleEnded = true;
 
+        if (enemyHealth <= 0)
+        {
+            UIController.instance.battleResultText.text = "YOU WON!";
+
+            foreach (CardPlacePoint point in CardPointsController.instance.enemyCardPoints)
+            {
+                if (point.activeCard != null)
+                {
+                    point.activeCard.MoveToPoint(discardPoint.position, point.activeCard.transform.rotation);
+                }
+            }
+        } else
+        {
+            UIController.instance.battleResultText.text = "YOU LOST!";
+
+            foreach (CardPlacePoint point in CardPointsController.instance.playerCardPoints)
+            {
+                if (point.activeCard != null)
+                {
+                    point.activeCard.MoveToPoint(discardPoint.position, point.activeCard.transform.rotation);
+                }
+            }
+        }
+
         HandController.instance.EmptyHandAndEndGame();
     }
 }

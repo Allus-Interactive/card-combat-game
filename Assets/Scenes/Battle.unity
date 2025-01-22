@@ -525,7 +525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BATTLE ENDED!
+  m_text: GAME ENDED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 208.9
+  m_fontSize: 214.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4070,9 +4070,10 @@ MonoBehaviour:
   cardsToDrawPerTurn: 1
   currentPhase: 0
   discardPoint: {fileID: 1376439006}
-  playerHealth: 2
-  enemyHealth: 2
+  playerHealth: 50
+  enemyHealth: 50
   battleEnded: 0
+  resultsScreenDelay: 3
 --- !u!4 &1869644834
 Transform:
   m_ObjectHideFlags: 0
@@ -5155,6 +5156,7 @@ MonoBehaviour:
   playerDamageIndicator: {fileID: 4026435}
   enemyDamageIndicator: {fileID: 549859874}
   BattleEndScreen: {fileID: 2071367794}
+  battleResultText: {fileID: 1909276789}
 --- !u!114 &2131160246
 MonoBehaviour:
   m_ObjectHideFlags: 0
