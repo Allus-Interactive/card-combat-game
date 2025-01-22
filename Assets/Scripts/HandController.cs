@@ -18,16 +18,9 @@ public class HandController : MonoBehaviour
 
     public List<Vector3> cardPositions = new List<Vector3>();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SetCardPositonsInHand();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SetCardPositonsInHand()
@@ -43,9 +36,6 @@ public class HandController : MonoBehaviour
         for (int i = 0; i < heldCards.Count; i++)
         {
             cardPositions.Add(minPosition.position + (distanceBetweenPoints * i));
-
-            // heldCards[i].transform.position = cardPositions[i];
-            // heldCards[i].transform.rotation = minPosition.rotation;
 
             heldCards[i].MoveToPoint(cardPositions[i], minPosition.rotation);
 

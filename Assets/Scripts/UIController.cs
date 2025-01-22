@@ -34,11 +34,6 @@ public class UIController : MonoBehaviour
 
     public GameObject pauseScreen;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (manaWarningCounter > 0)
