@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87d5f8b532b2fa74aac5215f37ea994f, type: 3}
-  m_Name: TestCard1
+  m_Name: Undead Warrior
   m_EditorClassIdentifier: 
-  cardName: Test Card 1
-  actionDescription: This is the first card
-  cardLore: The very first testing card
-  currentHealth: 3
-  attackPower: 4
-  manaCost: 2
-  characterSprite: {fileID: 21300000, guid: 0bf443811e7f96246b11edcf360ead7a, type: 3}
+  cardName: 
+  actionDescription: 
+  cardLore: 
+  currentHealth: 0
+  attackPower: 0
+  manaCost: 0
+  characterSprite: {fileID: 21300000, guid: d1b969f3bc868a849b20bbefad313a6a, type: 3}
   backgroundSprite: {fileID: 0}
