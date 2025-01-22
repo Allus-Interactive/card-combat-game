@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -70,5 +71,37 @@ public class HandController : MonoBehaviour
     {
         heldCards.Add(cardToAdd);
         SetCardPositonsInHand();
+    }
+
+    public void EmptyHand()
+    {
+        /* foreach (Card heldCard in heldCards)
+        {
+            heldCard.inHand = false;
+            // heldCard.MoveToPoint(BattleController.instance.discardPoint.position, heldCard.transform.rotation);
+            heldCard.MoveToPoint(DeckController.instance.transform.position, DeckController.instance.transform.rotation);
+        }
+
+        heldCards.Clear(); */
+        StartCoroutine(EmptyHandCoroutine());
+    }
+
+    IEnumerator EmptyHandCoroutine()
+    {
+        // reverse order of the hand
+        heldCards.Reverse();
+
+        yield return new WaitForSeconds(0.5f);
+
+        // from right to left, return the cards to the deck
+        foreach (Card heldCard in heldCards)
+        {
+            heldCard.inHand = false;
+            heldCard.MoveToPoint(DeckController.instance.transform.position, DeckController.instance.transform.rotation);
+            yield return new WaitForSeconds(0.25f);
+        }
+
+        // Clear the heldCards object
+        heldCards.Clear();
     }
 }
