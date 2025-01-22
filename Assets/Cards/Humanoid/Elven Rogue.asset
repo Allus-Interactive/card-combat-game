@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d5f8b532b2fa74aac5215f37ea994f, type: 3}
   m_Name: Elven Rogue
   m_EditorClassIdentifier: 
-  cardName: 
-  actionDescription: 
-  cardLore: 
-  currentHealth: 0
-  attackPower: 0
-  manaCost: 0
+  cardName: Elven Rogue
+  actionDescription: Fights an enemy being
+  cardLore: A decietful Elf who relies on trickery in combat
+  currentHealth: 2
+  attackPower: 2
+  manaCost: 2
   characterSprite: {fileID: 21300000, guid: 9e6a1f5c17d08c6468775d62442ee141, type: 3}
   backgroundSprite: {fileID: 0}

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d5f8b532b2fa74aac5215f37ea994f, type: 3}
   m_Name: Elven Mage
   m_EditorClassIdentifier: 
-  cardName: 
-  actionDescription: 
-  cardLore: 
-  currentHealth: 0
-  attackPower: 0
-  manaCost: 0
+  cardName: Elven Mage
+  actionDescription: Fights an enemy being
+  cardLore: An Elven Mage who has spent decades honing their skill
+  currentHealth: 1
+  attackPower: 3
+  manaCost: 2
   characterSprite: {fileID: 21300000, guid: d65b20a16024c0a46b76f44ae00828f0, type: 3}
   backgroundSprite: {fileID: 0}

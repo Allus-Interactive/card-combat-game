@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d5f8b532b2fa74aac5215f37ea994f, type: 3}
   m_Name: Human Mage
   m_EditorClassIdentifier: 
-  cardName: 
-  actionDescription: 
-  cardLore: 
-  currentHealth: 0
-  attackPower: 0
-  manaCost: 0
+  cardName: Human Mage
+  actionDescription: Fights an enemy being
+  cardLore: A mage who has seen more of combat than he would have liked
+  currentHealth: 2
+  attackPower: 4
+  manaCost: 3
   characterSprite: {fileID: 21300000, guid: 1b2181b24627c0c4d99f9567f14f5d6c, type: 3}
   backgroundSprite: {fileID: 0}

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d5f8b532b2fa74aac5215f37ea994f, type: 3}
   m_Name: Human Warrior
   m_EditorClassIdentifier: 
-  cardName: 
-  actionDescription: 
-  cardLore: 
-  currentHealth: 0
-  attackPower: 0
-  manaCost: 0
+  cardName: Human Warrior
+  actionDescription: Fights an enemy being
+  cardLore: A skilled Warrior who lives for adventure and combat
+  currentHealth: 6
+  attackPower: 4
+  manaCost: 6
   characterSprite: {fileID: 21300000, guid: 823c51d5394d61841be4f6bd70b94f6f, type: 3}
   backgroundSprite: {fileID: 0}
