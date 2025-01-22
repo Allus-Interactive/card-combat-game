@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d5f8b532b2fa74aac5215f37ea994f, type: 3}
   m_Name: Troll
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Troll
   actionDescription: Deals damage to an enemy card
-  cardLore: Normally peaceful creatures, Trolls will protect their homes from all
-    outsiders
+  cardLore: Normally peaceful creatures, Trolls are dangerous enemies
   currentHealth: 3
   attackPower: 3
   manaCost: 4
