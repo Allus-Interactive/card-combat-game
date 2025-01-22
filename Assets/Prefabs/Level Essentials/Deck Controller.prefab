@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780017521049557211}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 5, y: 0.32800007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,9 +45,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckToUse:
-  - {fileID: 11400000, guid: f7209c1ef6760d14fa0f02c05421f81c, type: 2}
-  - {fileID: 11400000, guid: fab8824df67658942a809d1c1c6be188, type: 2}
-  - {fileID: 11400000, guid: cd0f00b39b9143741b1a8cd11c64d1a4, type: 2}
+  - {fileID: 11400000, guid: 130bf937d8b98d04bb7b48c1d9069e7b, type: 2}
+  - {fileID: 11400000, guid: 130bf937d8b98d04bb7b48c1d9069e7b, type: 2}
+  - {fileID: 11400000, guid: 130bf937d8b98d04bb7b48c1d9069e7b, type: 2}
+  - {fileID: 11400000, guid: 6d9f405eba0a92843b98be5b9e9f1220, type: 2}
+  - {fileID: 11400000, guid: 6d9f405eba0a92843b98be5b9e9f1220, type: 2}
+  - {fileID: 11400000, guid: 6d9f405eba0a92843b98be5b9e9f1220, type: 2}
+  - {fileID: 11400000, guid: 3df4317c128705542b4dcb14b44dead1, type: 2}
+  - {fileID: 11400000, guid: 3df4317c128705542b4dcb14b44dead1, type: 2}
+  - {fileID: 11400000, guid: 3df4317c128705542b4dcb14b44dead1, type: 2}
+  - {fileID: 11400000, guid: f54ee1e75a251f64f86e0aa899a40cba, type: 2}
+  - {fileID: 11400000, guid: f54ee1e75a251f64f86e0aa899a40cba, type: 2}
+  - {fileID: 11400000, guid: f54ee1e75a251f64f86e0aa899a40cba, type: 2}
+  - {fileID: 11400000, guid: a3b8cfa4cff0b7646b6fbd8cadc7a1b7, type: 2}
+  - {fileID: 11400000, guid: a3b8cfa4cff0b7646b6fbd8cadc7a1b7, type: 2}
+  - {fileID: 11400000, guid: a3b8cfa4cff0b7646b6fbd8cadc7a1b7, type: 2}
   cardToSpawn: {fileID: 1193139502544324762, guid: 164a781b79867fb4080df4adec0b8f11, type: 3}
   drawCardCost: 2
   waitBetweenDrawingCards: 0.3
