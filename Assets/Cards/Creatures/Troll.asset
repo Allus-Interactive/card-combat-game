@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Troll
   m_EditorClassIdentifier: 
   cardName: 
-  actionDescription: 
-  cardLore: 
-  currentHealth: 0
-  attackPower: 0
-  manaCost: 0
+  actionDescription: Deals damage to an enemy card
+  cardLore: Normally peaceful creatures, Trolls will protect their homes from all
+    outsiders
+  currentHealth: 3
+  attackPower: 3
+  manaCost: 4
   characterSprite: {fileID: 21300000, guid: 965fb005b0533b24dba5266ddb93a007, type: 3}
   backgroundSprite: {fileID: 0}

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d5f8b532b2fa74aac5215f37ea994f, type: 3}
   m_Name: Armoured Spider
   m_EditorClassIdentifier: 
-  cardName: 
-  actionDescription: 
-  cardLore: 
-  currentHealth: 0
-  attackPower: 0
-  manaCost: 0
+  cardName: Armooured Spider
+  actionDescription: Deals damage to an enemy card
+  cardLore: An armoured arachnid bred for battle
+  currentHealth: 7
+  attackPower: 3
+  manaCost: 6
   characterSprite: {fileID: 21300000, guid: 37dbe34c374e911469a025fa1f7b0c99, type: 3}
   backgroundSprite: {fileID: 0}

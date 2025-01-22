@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d5f8b532b2fa74aac5215f37ea994f, type: 3}
   m_Name: Goblin
   m_EditorClassIdentifier: 
-  cardName: 
-  actionDescription: 
-  cardLore: 
-  currentHealth: 0
-  attackPower: 0
-  manaCost: 0
+  cardName: Goblin
+  actionDescription: Deals damage to an enemy card
+  cardLore: A small creature who delights in causing havok and misery
+  currentHealth: 1
+  attackPower: 1
+  manaCost: 1
   characterSprite: {fileID: 21300000, guid: f90e9d0690ad58d40b01eea2cf700d54, type: 3}
   backgroundSprite: {fileID: 0}
