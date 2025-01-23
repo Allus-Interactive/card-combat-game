@@ -20,6 +20,10 @@ public class UIController : MonoBehaviour
     public float manaWarningTime;
     private float manaWarningCounter;
 
+    public GameObject handLimitWarning;
+    public float handLimitWarningTime;
+    private float handLimitWarningCounter;
+
     public GameObject drawCardButton;
     public GameObject endTurnButton;
 
@@ -43,6 +47,16 @@ public class UIController : MonoBehaviour
             if (manaWarningCounter <= 0)
             {
                 manaWarning.SetActive(false);
+            }
+        }
+
+        if (handLimitWarningCounter > 0)
+        {
+            handLimitWarningCounter -= Time.deltaTime;
+
+            if (handLimitWarningCounter <= 0)
+            {
+                handLimitWarning.SetActive(false);
             }
         }
 
@@ -76,6 +90,12 @@ public class UIController : MonoBehaviour
     {
         manaWarning.SetActive(true);
         manaWarningCounter = manaWarningTime;
+    }
+
+    public void ShowHandLimitWarning()
+    {
+        handLimitWarning.SetActive(true);
+        handLimitWarningCounter = handLimitWarningTime;
     }
 
     public void DrawCard()

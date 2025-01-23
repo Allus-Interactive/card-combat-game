@@ -22,6 +22,8 @@ public class DeckController : MonoBehaviour
 
     public float waitBetweenDrawingCards = 0.4f;
 
+    private int cardHandLimit = 7;
+
     void Start()
     {
         SetupDeck();
@@ -44,35 +46,45 @@ public class DeckController : MonoBehaviour
 
     public void DrawCardToHand()
     {
-        if (activeCards.Count == 0)
+        if (HandController.instance.heldCards.Count < cardHandLimit)
         {
-            // TODO: do we want to refill the deck? Maybe player has to finish the game with no deck
-            // or does an empty deck mean an immediate loss?
-            SetupDeck();
+            if (activeCards.Count == 0)
+            {
+                // TODO: do we want to refill the deck? Maybe player has to finish the game with no deck
+                // or does an empty deck mean an immediate loss?
+                SetupDeck();
+            }
+
+            Card newCard = Instantiate(cardToSpawn, transform.position, transform.rotation);
+            newCard.cardSO = activeCards[0];
+            newCard.SetUpCard();
+
+            activeCards.RemoveAt(0);
+            HandController.instance.AddCardToHand(newCard);
+
+            AudioManager.instance.PlaySFX(3);
         }
-
-        Card newCard = Instantiate(cardToSpawn, transform.position, transform.rotation);
-        newCard.cardSO = activeCards[0];
-        newCard.SetUpCard();
-
-        activeCards.RemoveAt(0);
-        HandController.instance.AddCardToHand(newCard);
-
-        AudioManager.instance.PlaySFX(3);
     }
 
     public void DrawCardForMana()
     {
-        if (BattleController.instance.playerMana >= drawCardCost)
+        if (HandController.instance.heldCards.Count < cardHandLimit)
         {
-            DrawCardToHand();
-            BattleController.instance.SpendPlayerMana(drawCardCost);
+            if (BattleController.instance.playerMana >= drawCardCost)
+            {
+                DrawCardToHand();
+                BattleController.instance.SpendPlayerMana(drawCardCost);
+            }
+            else
+            {
+                UIController.instance.ShowManaWarning();
+                // Set button to disabled rather than inactive
+                // UIController.instance.drawCardButton.SetActive(false);
+                UIController.instance.drawCardButton.GetComponent<Button>().interactable = false;
+            }
         } else
         {
-            UIController.instance.ShowManaWarning();
-            // Set button to disabled rather than inactive
-            // UIController.instance.drawCardButton.SetActive(false);
-            UIController.instance.drawCardButton.GetComponent<Button>().interactable = false;
+            UIController.instance.ShowHandLimitWarning();
         }
     }
 
