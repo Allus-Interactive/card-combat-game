@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Card_Front
-  m_Shader: {fileID: -6465566751694194690, guid: d3471bbf11d95b648b04a3bfb8845b5e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 28c5b56667ba6b94295a55630a0d9bd5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

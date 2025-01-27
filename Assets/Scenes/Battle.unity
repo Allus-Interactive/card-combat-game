@@ -167,10 +167,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1193139502544324762, guid: 164a781b79867fb4080df4adec0b8f11, type: 3}
-      propertyPath: zoomPoint
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2084633655853117967, guid: 164a781b79867fb4080df4adec0b8f11, type: 3}
       propertyPath: m_Name
       value: Card
