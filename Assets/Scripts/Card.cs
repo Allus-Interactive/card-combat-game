@@ -46,6 +46,12 @@ public class Card : MonoBehaviour
 
     public Animator animator;
 
+    public Vector3 playedLocation;
+    public Quaternion playedRotation;
+    public bool isPlayed;
+    public bool isZoomed;
+    public Transform zoomPoint;
+
     void Start()
     {
         if (targetPoint == Vector3.zero)
@@ -90,10 +96,18 @@ public class Card : MonoBehaviour
                     {
                         if (BattleController.instance.playerMana >= manaCost)
                         {
+                            // Play the card
+                            isPlayed = true;
+                            col.enabled = true;
+
                             selectedPoint.activeCard = this;
                             assignedPlace = selectedPoint;
 
+                            // Move the card to the selected slot
                             MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
+                            // Store this location for inspecting the card
+                            playedLocation = selectedPoint.transform.position;
+                            playedRotation = Quaternion.identity;
 
                             inHand = false;
                             isSelected = false;
@@ -186,6 +200,21 @@ public class Card : MonoBehaviour
         costText.text = manaCost.ToString();
     }
 
+    public void InspectCard()
+    {
+        if (!isZoomed && !BattleController.instance.isCardInFocus)
+        {
+            MoveToPoint(new Vector3(0f, 3f, 0f), Quaternion.identity);
+            isZoomed = true;
+            BattleController.instance.isCardInFocus = true;
+        } else if (isZoomed)
+        {
+            MoveToPoint(playedLocation, playedRotation);
+            isZoomed = false;
+            BattleController.instance.isCardInFocus = false;
+        }
+    }
+
     private void OnMouseOver()
     {
         if (inHand && isPlayer && BattleController.instance.battleEnded == false)
@@ -210,6 +239,11 @@ public class Card : MonoBehaviour
             col.enabled = false;
 
             justPressed = true;
+        }
+
+        if (isPlayed)
+        {
+            InspectCard();
         }
     }
 }

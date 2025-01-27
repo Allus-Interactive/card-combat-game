@@ -36,6 +36,8 @@ public class BattleController : MonoBehaviour
     [Range(0f, 1f)]
     public float firstTurnChance = 0.5f;
 
+    public bool isCardInFocus;
+
     void Start()
     {
         currentPlayerMaxMana = startingMana;

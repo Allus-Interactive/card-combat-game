@@ -345,6 +345,9 @@ MonoBehaviour:
     m_Bits: 128
   assignedPlace: {fileID: 0}
   animator: {fileID: 9064703941538726707}
+  isPlayed: 0
+  isZoomed: 0
+  zoomPoint: {fileID: 0}
 --- !u!65 &4690082466841261867
 BoxCollider:
   m_ObjectHideFlags: 0

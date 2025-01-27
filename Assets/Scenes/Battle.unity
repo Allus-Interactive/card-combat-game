@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1193139502544324762, guid: 164a781b79867fb4080df4adec0b8f11, type: 3}
+      propertyPath: zoomPoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2084633655853117967, guid: 164a781b79867fb4080df4adec0b8f11, type: 3}
       propertyPath: m_Name
       value: Card
@@ -765,10 +769,6 @@ PrefabInstance:
     - target: {fileID: 7221699396689883668, guid: 187b76226685f594390b44b4fa63540f, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7518856452107962497, guid: 187b76226685f594390b44b4fa63540f, type: 3}
-      propertyPath: assignedPlace
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9049199576417716959, guid: 187b76226685f594390b44b4fa63540f, type: 3}
       propertyPath: m_LocalPosition.x
